@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.select-wrapper {
+  width: 250px;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+}
+
+.select {
+  width: 100%;
+}
+
+.select ::-webkit-scrollbar {
+  width: 0.3em;
+}
+
+.select ::-webkit-scrollbar-track {
+  background-color: #d8d8d8;
+}
+
+.select ::-webkit-scrollbar-thumb {
+  background-color: #3cce7b;
+}
+
+.select__main {
+  border: 1px solid #ccc;
+  padding: 0 0.6em 0.6em;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  height: 2.4em;
+  overflow: hidden;
+  position: relative;
+}
+
+.select__main.open {
+  height: auto;
+}
+
+.select__close {
+  position: absolute;
+  right: 0.5em;
+  top: 0.3em;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition: transform 0.3s;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.select__close.anim {
+  transform: rotate(360deg);
+}
+
+.select__search {
+  width: 100%;
+  margin-bottom: 0.6em;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 0.3em;
+}
+
+.select__placeholder {
+  cursor: pointer;
+  padding-bottom: 0.6em;
+  padding-top: 0.5em;
+  padding-right: 1em;
+}
+
+.select__list {
+  max-height: 6rem;
+  overflow-y: auto;
+}
+
+.select__option {
+  padding: 0.3em;
+  font-size: 0.9em;
+  cursor: pointer;
+  margin-right: 0.3em;
+  border-bottom: 1px solid #ccc;
+}
+
+.select__option:last-child {
+  border-bottom: none;
+}
+
+.select__option:hover {
+  background-color: #3cce7b;
+  color: #fff;
+}
+
+.select__option.disable {
+  color: #ccc;
+  cursor: default;
+}
+
+.select__option.disable:hover {
+  background-color: #fff;
+}
+
+.select__label {
+  display: inline-flex;
+  border: 1px solid #ccc;
+  padding: 0.2em 0.4em 0.2em 0.3em;
+  font-size: 0.8em;
+  border-radius: 0.3em;
+  margin: 0 0.2em 0.2em;
+  user-select: none;
+}

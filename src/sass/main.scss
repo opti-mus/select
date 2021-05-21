@@ -1,0 +1,101 @@
+$main-black: #333;
+$main-border: #666;
+$main-green: #3cce7b;
+$main-white: #fff;
+$border-second: #ccc;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.select-wrapper {
+  width: 250px;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+}
+
+.select {
+  width: 100%;
+  ::-webkit-scrollbar {
+    width: 0.3em;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #d8d8d8;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: $main-green;
+  }
+  &__main {
+    border: 1px solid $border-second;
+    padding: 0 0.6em 0.6em;
+    color: $main-border;
+    display: flex;
+    flex-direction: column;
+    height: 2.4em;
+    overflow: hidden;
+    position: relative;
+    &.open {
+      height: auto;
+    }
+  }
+  &__close {
+    position: absolute;
+    right: 0.5em;
+    top: 0.3em;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: transform 0.3s;
+    transform: rotate(45deg);
+    cursor: pointer;
+    &.anim {
+      transform: rotate(360deg);
+    }
+  }
+  &__search {
+    width: 100%;
+    margin-bottom: 0.6em;
+    border: 1px solid $border-second;
+    outline: none;
+    padding: 0.3em;
+  }
+  &__placeholder {
+    cursor: pointer;
+    padding-bottom: 0.6em;
+    padding-top: 0.5em;
+    padding-right: 1em;
+  }
+  &__list {
+    max-height: 6rem;
+    overflow-y: auto;
+  }
+  &__option {
+    padding: 0.3em;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin-right: 0.3em;
+    border-bottom: 1px solid $border-second;
+    &:last-child {
+      border-bottom: none;
+    }
+    &:hover {
+      background-color: $main-green;
+      color: $main-white;
+    }
+    &.disable {
+      color: $border-second;
+      cursor: default;
+      &:hover {
+        background-color: $main-white;
+      }
+    }
+  }
+  &__label {
+    display: inline-flex;
+    border: 1px solid #ccc;
+    padding: 0.2em 0.4em 0.2em 0.3em;
+    font-size: 0.8em;
+    border-radius: 0.3em;
+    margin: 0 0.2em 0.2em;
+    user-select: none;
+  }
+}
